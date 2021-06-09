@@ -35,8 +35,9 @@ showTask = function(task)
     taskDiv = createCustomElement(rowContainer, 'div', 'col-4 ', [], '')
     innerDiv = createCustomElement(taskDiv, 'div', 'm-4 bg-primary p-3', [], '')
     taskHeads.forEach(h=>{
-        h5 = createCustomElement(innerDiv, "h5", "", [], task[h])
-        console.log("in and h= "+h)
+        div = createCustomElement(innerDiv, 'div', '', [], '')
+        key = createCustomElement(div, "span", "", [{attrName:"style", attValue:"color:white"}], h+": ")
+        h5 = createCustomElement(div, "span", "", [], task[h])
     })
     delBtn = createCustomElement(innerDiv, 'button', 'btn btn-danger c', [], 'delete')
     delBtn.addEventListener('click', function(e){
